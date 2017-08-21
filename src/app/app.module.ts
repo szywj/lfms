@@ -5,16 +5,17 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
 import { appRoutes } from './app.routes';
+import { MenuModule, MenuItem } from 'primeng/primeng';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WorkspaceComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

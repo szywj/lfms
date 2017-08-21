@@ -12,5 +12,5 @@ export const appRoutes = [
         path: '**',
         redirectTo: 'workspace'
     }
-]
+];
 
