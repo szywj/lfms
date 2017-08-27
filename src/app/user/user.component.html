@@ -1,4 +1,66 @@
-<p>
-  user works!
-</p>
-<router-outlet></router-outlet>
+<div>
+  <form>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-3">
+        <button pButton type="button" class="ui-button-success" label="Input a customer's info"></button>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <button pButton type="button" class="ui-button-danger" label="Import multiple customers' info"></button>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+          <input type="text" pInputText placeholder="Customer Number">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <p-selectButton [options]="customerTypes"></p-selectButton>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <p-dropdown [options]="customerStates" placeholder="---Customer State---">
+          <ng-template let-customerState pTemplate="item">
+            <div>
+              Customer State: {{customerState.label}}
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-id-card"></i></span>
+          <input type="text" pInputText placeholder="Customer Name">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-user-circle-o"></i></span>
+          <input type="text" pInputText placeholder="Customer Manager">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <p-dropdown [options]="dateTypes" placeholder="---Date Type---">
+          <ng-template let-dateType pTemplate="item">
+            <div>
+              Date Type: {{dateType.label}}
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <p-calendar name="start" [(ngModel)]="startDate" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true"
+          placeholder="Start Date"></p-calendar>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <p-calendar name="end" [(ngModel)]="endDate" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true"
+          placeholder="End Date"></p-calendar>
+      </div>
+    </div>
+  </form>
+  <router-outlet></router-outlet>
+</div>

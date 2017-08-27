@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "customerNo": "UEFLJG000001",
+            "customerType": "Institution",
+            "customerName": "Citi Bank",
+            "customerState": "Pre-input",
+            "customerCreditLimit": 20000000,
+            "customerManager": "Chris Cheng",
+            "customerCreationDate": "2017-01-01",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000002",
+            "customerType": "Institution",
+            "customerName": "Bank of America",
+            "customerState": "Credit granted",
+            "customerCreditLimit": 120000000,
+            "customerManager": "Rainy Cao",
+            "customerCreationDate": "2017-02-01",
+            "customerLastUpdateDate": "2017-08-27"
+        }
+    ]
+}
