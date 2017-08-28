@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
-import { DataTableModule, SharedModule, ButtonModule } from 'primeng/primeng';
+import { DataTableModule, SharedModule, ButtonModule, DialogModule } from 'primeng/primeng';
 import { InputTextModule, SelectButtonModule, DropdownModule, CalendarModule } from 'primeng/primeng';
 
 import { UserComponent } from './user.component';
@@ -24,6 +24,7 @@ import { CustomerService } from './user-table/services/customer.service';
         DataTableModule,
         SharedModule,
         HttpModule,
+        DialogModule,
         RouterModule.forChild(userRoutes)
     ],
     declarations: [

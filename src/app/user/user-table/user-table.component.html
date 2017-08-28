@@ -1,6 +1,13 @@
 <div class="container">
-  <p-dataTable [lazy]="true" [value]="customers" [rows]="3" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[3,5,10]" [totalRecords]="totalRecords" (onLazyLoad)="loadCustomersLazy($event)">
-    <p-header>List of Customers</p-header>
+  <p-dataTable #dt [lazy]="true" [value]="customers" [rows]="3" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[3,5,10]"
+    [totalRecords]="totalRecords" (onLazyLoad)="loadCustomersLazy($event)" [responsive]="true" selectionMode="single" [(selection)]="selectedCustomer"
+    (onRowSelect)="onRowSelect($event)">
+    <p-header>
+      List of Customers
+      <div class="ui-helper-clearfix">
+        <button type="button" pButton icon="fa-file-o" iconPos="left" label="Download" (click)="dt.exportCSV()" style="float:right"></button>
+      </div>
+    </p-header>
     <p-column header="Seq">
       <ng-template let-ri="rowIndex" pTemplate="Body">
         <span [style]="{'text-align': 'right'}"> {{ri + 1}}</span>
@@ -8,10 +15,46 @@
     </p-column>
     <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
     <p-column header="Operations">
-        <ng-template let-customer="rowData" pTemplate="body">
-            <button type="button" class="ui-button-info" pButton (click)="a" icon="fa-pencil"></button>
-            <button type="button" class="ui-button-danger" pButton (click)="a" icon="fa-trash"></button>
-        </ng-template>    
+      <ng-template let-customer="rowData" pTemplate="body">
+        <button type="button" class="ui-button-info" pButton (click)="edit(customer)" icon="fa-pencil"></button>
+        <button type="button" class="ui-button-danger" pButton (click)="a" icon="fa-trash"></button>
+      </ng-template>
     </p-column>
   </p-dataTable>
+  <p-dialog header="Customer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="customer">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerNo">Customer No</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerNo" [(ngModel)]="customer.customerNo" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerType">Customer Type</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerType" [(ngModel)]="customer.customerType" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerName">Customer Name</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerName" [(ngModel)]="customer.customerName" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerState">Customer State</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerState" [(ngModel)]="customer.customerState" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerCreditLimit">Customer Credit Limit</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerCreditLimit" [(ngModel)]="customer.customerCreditLimit" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerManager">Customer Manager</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerManager" [(ngModel)]="customer.customerManager" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerCreationDate">Customer Creation Date</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerCreationDate" [(ngModel)]="customer.customerCreationDate" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><label for="customerLastUpdateDate">Customer Last Update Date</label></div>
+        <div class="ui-grid-col-12"><input pInputText id="customerLastUpdateDate" [(ngModel)]="customer.customerLastUpdateDate" /></div>
+      </div>
+    </div>
+  </p-dialog>
 </div>

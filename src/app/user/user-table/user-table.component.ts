@@ -13,6 +13,9 @@ export class UserTableComponent implements OnInit {
   customers: Customer[];
   cols: any[];
   totalRecords: number;
+  customer: Customer = new CustomerImpl();
+  displayDialog: boolean;
+  // selectedCustomer: Customer;
 
   constructor(private customerService: CustomerService) {
   }
@@ -43,4 +46,34 @@ export class UserTableComponent implements OnInit {
       }
     }, 300);
   }
+
+  onRowSelect(event) {
+    // this.customer = this.cloneCustomer(event.data);
+    this.customer = event.data;
+    this.displayDialog = true;
+  }
+
+  edit(customer: Customer) {
+    this.customer = customer;
+    this.displayDialog = true;
+  }
+
+  // cloneCustomer(cus: Customer): Customer {
+  //   let c = new CustomerImpl();
+  //   for (let prop in cus) {
+  //     c[prop] = cus[prop];
+  //   }
+  //   return c;
+  // }
+}
+
+class CustomerImpl implements Customer {
+  constructor(public customerNo?,
+    public customerType?,
+    public customerName?,
+    public customerState?,
+    public customerCreditLimit?,
+    public customerManager?,
+    public customerCreationDate?,
+    public customerLastUpdateDate?) { }
 }
