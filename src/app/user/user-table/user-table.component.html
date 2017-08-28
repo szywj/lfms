@@ -1,5 +1,17 @@
 <div class="container">
-  <p-dataTable [value]="customers">
+  <p-dataTable [lazy]="true" [value]="customers" [rows]="3" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[3,5,10]" [totalRecords]="totalRecords" (onLazyLoad)="loadCustomersLazy($event)">
+    <p-header>List of Customers</p-header>
+    <p-column header="Seq">
+      <ng-template let-ri="rowIndex" pTemplate="Body">
+        <span [style]="{'text-align': 'right'}"> {{ri + 1}}</span>
+      </ng-template>
+    </p-column>
     <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+    <p-column header="Operations">
+        <ng-template let-customer="rowData" pTemplate="body">
+            <button type="button" class="ui-button-info" pButton (click)="a" icon="fa-pencil"></button>
+            <button type="button" class="ui-button-danger" pButton (click)="a" icon="fa-trash"></button>
+        </ng-template>    
+    </p-column>
   </p-dataTable>
 </div>

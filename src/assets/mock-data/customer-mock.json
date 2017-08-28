@@ -19,6 +19,166 @@
             "customerManager": "Rainy Cao",
             "customerCreationDate": "2017-02-01",
             "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000004",
+            "customerType": "Institution",
+            "customerName": "Standard Chartered",
+            "customerState": "Deleted without review",
+            "customerCreditLimit": 10000000,
+            "customerManager": "Catherine Yang",
+            "customerCreationDate": "2017-12-01",
+            "customerLastUpdateDate": "2019-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000003",
+            "customerType": "Enterprise",
+            "customerName": "China Mobile",
+            "customerState": "Pre-input",
+            "customerCreditLimit": 210000000,
+            "customerManager": "Mia Qiu",
+            "customerCreationDate": "2017-01-01",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000008",
+            "customerType": "Institution",
+            "customerName": "Bank of China",
+            "customerState": "Credit granted",
+            "customerCreditLimit": 120000000,
+            "customerManager": "Bob Gu",
+            "customerCreationDate": "2016-12-31",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000010",
+            "customerType": "Institution",
+            "customerName": "Standard Chartered",
+            "customerState": "Deleted",
+            "customerCreditLimit": 140000000,
+            "customerManager": "Lynn Liu",
+            "customerCreationDate": "2017-02-01",
+            "customerLastUpdateDate": "2019-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000007",
+            "customerType": "Enterprise",
+            "customerName": "China Unicom",
+            "customerState": "Pre-input",
+            "customerCreditLimit": 20000000,
+            "customerManager": "Xiang Li",
+            "customerCreationDate": "2017-01-02",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000011",
+            "customerType": "Institution",
+            "customerName": "Bank of Communications",
+            "customerState": "Credit granted",
+            "customerCreditLimit": 120000000,
+            "customerManager": "Bob Gu",
+            "customerCreationDate": "2016-12-31",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000015",
+            "customerType": "Institution",
+            "customerName": "Bank of Beijing",
+            "customerState": "Deleted",
+            "customerCreditLimit": 140000000,
+            "customerManager": "Mia Qiu",
+            "customerCreationDate": "2017-02-01",
+            "customerLastUpdateDate": "2019-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000099",
+            "customerType": "Institution",
+            "customerName": "Citi Bank",
+            "customerState": "Pre-input",
+            "customerCreditLimit": 20000000,
+            "customerManager": "Chris Cheng",
+            "customerCreationDate": "2017-01-01",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000020",
+            "customerType": "Institution",
+            "customerName": "Bank of America",
+            "customerState": "Credit granted",
+            "customerCreditLimit": 120000000,
+            "customerManager": "Rainy Cao",
+            "customerCreationDate": "2017-02-01",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000019",
+            "customerType": "Institution",
+            "customerName": "Standard Chartered",
+            "customerState": "Deleted without review",
+            "customerCreditLimit": 10000000,
+            "customerManager": "Catherine Yang",
+            "customerCreationDate": "2017-12-01",
+            "customerLastUpdateDate": "2019-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000036",
+            "customerType": "Enterprise",
+            "customerName": "China Mobile",
+            "customerState": "Pre-input",
+            "customerCreditLimit": 210000000,
+            "customerManager": "Mia Qiu",
+            "customerCreationDate": "2017-01-01",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000025",
+            "customerType": "Institution",
+            "customerName": "Bank of China",
+            "customerState": "Credit granted",
+            "customerCreditLimit": 120000000,
+            "customerManager": "Bob Gu",
+            "customerCreationDate": "2016-12-31",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000077",
+            "customerType": "Institution",
+            "customerName": "Standard Chartered",
+            "customerState": "Deleted",
+            "customerCreditLimit": 140000000,
+            "customerManager": "Lynn Liu",
+            "customerCreationDate": "2017-02-01",
+            "customerLastUpdateDate": "2019-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000055",
+            "customerType": "Enterprise",
+            "customerName": "China Unicom",
+            "customerState": "Pre-input",
+            "customerCreditLimit": 20000000,
+            "customerManager": "Xiang Li",
+            "customerCreationDate": "2017-01-02",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000078",
+            "customerType": "Institution",
+            "customerName": "Bank of Communications",
+            "customerState": "Credit granted",
+            "customerCreditLimit": 120000000,
+            "customerManager": "Bob Gu",
+            "customerCreationDate": "2016-12-31",
+            "customerLastUpdateDate": "2017-08-27"
+        },
+        {
+            "customerNo": "UEFLJG000022",
+            "customerType": "Institution",
+            "customerName": "Bank of Beijing",
+            "customerState": "Deleted",
+            "customerCreditLimit": 140000000,
+            "customerManager": "Mia Qiu",
+            "customerCreationDate": "2017-02-01",
+            "customerLastUpdateDate": "2019-08-27"
         }
     ]
 }
