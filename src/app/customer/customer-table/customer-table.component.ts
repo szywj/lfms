@@ -4,11 +4,11 @@ import { CustomerService } from './services/customer.service';
 import { Customer } from '../../interfaces/customer';
 
 @Component({
-  selector: 'user-table',
-  templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.scss']
+  selector: 'customer-table',
+  templateUrl: './customer-table.component.html',
+  styleUrls: ['./customer-table.component.scss']
 })
-export class UserTableComponent implements OnInit {
+export class CustomerTableComponent implements OnInit {
   datasource: Customer[];
   customers: Customer[];
   cols: any[];

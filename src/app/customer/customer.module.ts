@@ -7,10 +7,10 @@ import { HttpModule } from '@angular/http';
 import { DataTableModule, SharedModule, ButtonModule, DialogModule } from 'primeng/primeng';
 import { InputTextModule, SelectButtonModule, DropdownModule, CalendarModule } from 'primeng/primeng';
 
-import { UserComponent } from './user.component';
-import { userRoutes } from './user.routes';
-import { UserTableComponent } from './user-table/user-table.component';
-import { CustomerService } from './user-table/services/customer.service';
+import { CustomerComponent } from './customer.component';
+import { customerRoutes } from './customer.routes';
+import { CustomerTableComponent } from './customer-table/customer-table.component';
+import { CustomerService } from './customer-table/services/customer.service';
 
 @NgModule({
     imports: [
@@ -25,16 +25,16 @@ import { CustomerService } from './user-table/services/customer.service';
         SharedModule,
         HttpModule,
         DialogModule,
-        RouterModule.forChild(userRoutes)
+        RouterModule.forChild(customerRoutes)
     ],
     declarations: [
-        UserComponent,
-        UserTableComponent
+        CustomerComponent,
+        CustomerTableComponent
     ],
     providers: [
         CustomerService
     ]
 })
-export class UserMoudle {
+export class CustomerModule {
 
 }

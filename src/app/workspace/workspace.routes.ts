@@ -7,12 +7,12 @@ export const workspaceRoutes = [
         children: [
             {
                 path: '',
-                redirectTo: 'user',
+                redirectTo: 'customer',
                 pathMatch: 'full'
             },
             {
-                path: 'user',
-                loadChildren: '../user/user.module#UserMoudle'
+                path: 'customer',
+                loadChildren: '../customer/customer.module#CustomerModule'
             }
         ]
     }

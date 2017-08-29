@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/primeng';
 
 @Component({
-  selector: 'user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.scss']
 })
-export class UserComponent implements OnInit {
+export class CustomerComponent implements OnInit {
   customerTypes: SelectItem[];
   selectedCustomerType: any;
 
