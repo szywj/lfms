@@ -7,7 +7,7 @@ export const workspaceRoutes = [
         children: [
             {
                 path: '',
-                redirectTo: 'customer',
+                redirectTo: '#',
                 pathMatch: 'full'
             },
             {

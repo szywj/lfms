@@ -1,4 +1,8 @@
 <div class="container">
-    <p>Workspace</p>
-    <router-outlet></router-outlet>
+    <div class="layout-main">
+        <p-megaMenu [model]="items" orientation="vertical"></p-megaMenu>
+        <div class="layout-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
