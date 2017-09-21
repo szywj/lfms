@@ -4,7 +4,7 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Chromium",
+            "name": "Chrome",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceRoot}"
         }

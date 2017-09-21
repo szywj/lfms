@@ -4,11 +4,12 @@ import { Router, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MegaMenuModule } from 'primeng/primeng';
+// import { MegaMenuModule } from 'primeng/primeng';
 
 @NgModule({
   imports: [
-    MegaMenuModule,
+    CommonModule,
+    // MegaMenuModule,
     RouterModule.forChild(workspaceRoutes)
   ],
   declarations: [

@@ -1,3 +1,4 @@
+// import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -5,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
-import { appRoutes } from './app.routes';
-import { MenuModule, MenuItem } from 'primeng/primeng';
+import { appRoutes } from './app-routing.module';
+// import { MenuModule, MenuItem } from 'primeng/primeng';
 
 
 @NgModule({
@@ -16,8 +17,8 @@ import { MenuModule, MenuItem } from 'primeng/primeng';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
-    MenuModule
+    RouterModule.forRoot(appRoutes)
+    // MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,28 @@
-<div class="container">
-    <div class="layout-main">
-        <p-megaMenu [model]="items" orientation="vertical"></p-megaMenu>
-        <div class="layout-content">
+<div class="layout-wrapper">
+    <div id="layout-topbar">
+        <a href="#" class="menu-button" (click)="onMenuButtonClick($event)">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="logo" [routerLink]="['/']">
+            <!-- <img alt="logo" src="assets/showcase/images/logo.png" /> -->
+            <span>Financial Leasing Management System</span>
+        </a>
+    </div>
+    <div id="layout-sidebar" [ngClass]="{'active': menuActive}">
+        <div class="layout-menu">
+            <a id="menu_customer" #customermenutitle [class.active-menuitem]="customermenutitle.id == activeMenuId" (click)="activeMenuId = (activeMenuId === customermenutitle.id ? null : customermenutitle.id)">
+                <i class="fa fa-user fa-2x"></i>
+                <span>Customer</span>
+            </a>
+            <div [ngClass]="{'submenushow': (customermenutitle.id == activeMenuId), 'submenuhide': (customermenutitle.id != activeMenuId)}">
+                <a [routerLink]="['customer']" (click)="menuActive = false">Browse</a>
+            </div>
+        </div>
+    </div>
+    <div class="layout-mask" *ngIf="menuActive">
+    </div>
+    <div id="layout-content">
+        <div>
             <router-outlet></router-outlet>
         </div>
     </div>
