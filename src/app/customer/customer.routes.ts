@@ -1,5 +1,7 @@
 import { CustomerTableComponent } from './customer-table/customer-table.component';
 import { CustomerComponent } from './customer.component';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
+
 export const customerRoutes = [
     {
         path: '',
@@ -13,6 +15,10 @@ export const customerRoutes = [
             {
                 path: 'customertable/:page',
                 component: CustomerTableComponent
+            },
+            {
+                path: 'newcustomer',
+                component: CustomerInfoComponent
             }
         ]
     }

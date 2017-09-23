@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LazyLoadEvent } from 'primeng/primeng';
-import { CustomerService } from './services/customer.service';
+import { LazyLoadEvent, MenuItem, SelectItem } from 'primeng/primeng';
+import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../interfaces/customer';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'customer-table',
@@ -17,10 +18,45 @@ export class CustomerTableComponent implements OnInit {
   displayDialog: boolean;
   // selectedCustomer: Customer;
 
-  constructor(private customerService: CustomerService) {
+  items: MenuItem[];
+
+  customerTypes: SelectItem[];
+  selectedCustomerType: any;
+
+  customerStates: SelectItem[];
+  selectedCustomerState: any;
+
+  dateTypes: SelectItem[];
+  selectedDateType: any;
+
+  startDate: Date;
+  endDate: Date;
+
+  constructor(private customerService: CustomerService,
+    public router: Router, public activatedRoute: ActivatedRoute) {
+    this.customerTypes = [];
+    this.customerTypes.push({ label: 'Institution', value: { id: 1, name: 'Institution' } });
+    this.customerTypes.push({ label: 'Enterprise', value: { id: 2, name: 'Enterprise' } });
+
+    this.customerStates = [];
+    this.customerStates.push({ label: 'Draft', value: { id: 0, status: 'Draft' } });
+    this.customerStates.push({ label: 'Credit not granted', value: { id: 1, status: 'Credit not granted' } });
+    this.customerStates.push({ label: 'Credit granted', value: { id: 2, status: 'Credit granted' } });
+    this.customerStates.push({ label: 'Deleted without a review', value: { id: 3, status: 'Deleted without a review' } });
+    this.customerStates.push({ label: 'Deleted', value: { id: 4, status: 'Deleted' } });
+
+    this.dateTypes = [];
+    this.dateTypes.push({ label: 'Creation Date', value: { id: 0, status: 'Creation Date' } });
+
+    // this.startDate = new Date();
+    // this.endDate = new Date();
   }
 
   ngOnInit() {
+    this.items = [];
+    this.items.push({ label: 'Customer' });
+    this.items.push({ label: 'Browse' });
+
     this.customerService.getCustomers().then(datasource => {
       this.datasource = datasource;
       this.totalRecords = datasource.length;
@@ -58,6 +94,10 @@ export class CustomerTableComponent implements OnInit {
     this.displayDialog = true;
   }
 
+
+  public newCustomer(): void {
+    this.router.navigateByUrl('/workspace/customer/newcustomer');
+  }
   // cloneCustomer(cus: Customer): Customer {
   //   let c = new CustomerImpl();
   //   for (let prop in cus) {

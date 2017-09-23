@@ -1,0 +1,164 @@
+<div class="content-section introduction">
+  <div>
+    <span class="function-title">New Corporation Customer Information</span>
+  </div>
+</div>
+<form>
+  <div class="content-section">
+    <p-breadcrumb [model]="items"></p-breadcrumb>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Customer Number</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+          <input type="text" pInputText placeholder="Customer Number">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Customer Type</span>
+        <p-selectButton [options]="customerTypes"></p-selectButton>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Customer Name</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-id-card"></i></span>
+          <input type="text" pInputText placeholder="Customer Name">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-12">
+        <span>Registered Address</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-address-card"></i></span>
+          <input type="text" pInputText placeholder="Registered Address">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-12">
+        <span>Office Address</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-address-card"></i></span>
+          <input type="text" pInputText placeholder="Office Address">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Legal Representative</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-legal"></i></span>
+          <input type="text" pInputText placeholder="Legal Representative">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>ID Card Number of Legal Representative</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-legal"></i></span>
+          <input type="text" pInputText placeholder="ID Card Number of Legal Representative">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Registered Capital</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-cny"></i></span>
+          <input type="text" pInputText placeholder="Registered Capital">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Unified Social Credit Code</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-qrcode"></i></span>
+          <input type="text" pInputText placeholder="Unified Social Credit Code">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-12">
+        <span>Business Scope</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-briefcase"></i></span>
+          <input type="text" pInputText placeholder="Business Scope">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Creation Date</span>
+        <p-calendar name="start" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true" placeholder="Creation Date"></p-calendar>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Expiration Date</span>
+        <p-calendar name="start" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true" placeholder="Expiration Date"></p-calendar>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Contact Name</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-vcard"></i></span>
+          <input type="text" pInputText placeholder="Contact Name">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Contact Title</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-vcard"></i></span>
+          <input type="text" pInputText placeholder="Contact Title">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Contact Mobile Phone Number</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-vcard"></i></span>
+          <input type="text" pInputText placeholder="Contact Mobile Phone Number">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-6">
+        <span>Contact Email Address</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+          <input type="text" pInputText placeholder="Contact Email Address">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-6">
+        <span>Contact Address</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+          <input type="text" pInputText placeholder="Contact Address">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-section">
+    <h2>Desinated Account Information</h2>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Account Name</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+          <input type="text" pInputText placeholder="Account Name">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Bank</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-bank"></i></span>
+          <input type="text" pInputText placeholder="Bank">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Account Number</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-credit-card"></i></span>
+          <input type="text" pInputText placeholder="Account Number">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

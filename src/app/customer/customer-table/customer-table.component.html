@@ -1,63 +1,140 @@
-<div class="container">
-  <p-dataTable #dt [lazy]="true" [value]="customers" [rows]="3" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[3,5,10]"
-    [totalRecords]="totalRecords" (onLazyLoad)="loadCustomersLazy($event)" [responsive]="true" selectionMode="single" [(selection)]="selectedCustomer"
-    (onRowSelect)="onRowSelect($event)">
-    <p-header>
-      List of Customers
-      <div class="ui-helper-clearfix">
-        <button type="button" pButton icon="fa-file-o" iconPos="left" label="Download" (click)="dt.exportCSV()" style="float:right"></button>
+<div class="content-section">
+  <p-breadcrumb [model]="items"></p-breadcrumb>
+  <form>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-3">
+        <button pButton type="button" class="ui-button-success" label="Input a customer's info" (click)="newCustomer()"></button>
       </div>
-    </p-header>
-    <p-column header="Seq">
-      <ng-template let-ri="rowIndex" pTemplate="Body">
-        <span [style]="{'text-align': 'right'}"> {{ri + 1}}</span>
-      </ng-template>
-    </p-column>
-    <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
-    <p-column header="Operations">
-      <ng-template let-customer="rowData" pTemplate="body">
-        <button type="button" class="ui-button-info" pButton (click)="edit(customer)" icon="fa-pencil"></button>
-        <button type="button" class="ui-button-danger" pButton (click)="a" icon="fa-trash"></button>
-      </ng-template>
-    </p-column>
-  </p-dataTable>
-  <p-dialog header="Customer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
-    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="customer">
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerNo">Customer No</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerNo" [(ngModel)]="customer.customerNo" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerType">Customer Type</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerType" [(ngModel)]="customer.customerType" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerName">Customer Name</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerName" [(ngModel)]="customer.customerName" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerState">Customer State</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerState" [(ngModel)]="customer.customerState" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerCreditLimit">Customer Credit Limit</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerCreditLimit" [(ngModel)]="customer.customerCreditLimit" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerManager">Customer Manager</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerManager" [(ngModel)]="customer.customerManager" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerCreationDate">Customer Creation Date</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerCreationDate" [(ngModel)]="customer.customerCreationDate" /></div>
-      </div>
-      <div class="ui-grid-row">
-        <div class="ui-grid-col-12"><label for="customerLastUpdateDate">Customer Last Update Date</label></div>
-        <div class="ui-grid-col-12"><input pInputText id="customerLastUpdateDate" [(ngModel)]="customer.customerLastUpdateDate" /></div>
+      <div class="ui-g-12 ui-md-3">
+        <button pButton type="button" class="ui-button-danger" label="Import multiple customers"></button>
       </div>
     </div>
-    <p-footer>
-      <button pButton class="ui-button-primary" label="More..." click="#"></button>
-    </p-footer>
-  </p-dialog>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-3">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+          <input type="text" pInputText placeholder="Customer Number">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <p-selectButton [options]="customerTypes"></p-selectButton>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <p-dropdown [options]="customerStates" placeholder="---Customer State---">
+          <ng-template let-customerState pTemplate="item">
+            <div>
+              Customer State: {{customerState.label}}
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <button pButton class="ui-button-primary" label="Inquire"></button>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-3">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-id-card"></i></span>
+          <input type="text" pInputText placeholder="Customer Name">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-user-circle-o"></i></span>
+          <input type="text" pInputText placeholder="Customer Manager">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <button pButton class="ui-button-warning" label="Reset"></button>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-3">
+        <p-dropdown [options]="dateTypes" placeholder="---Date Type---">
+          <ng-template let-dateType pTemplate="item">
+            <div>
+              Date Type: {{dateType.label}}
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <p-calendar name="start" [(ngModel)]="startDate" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true"
+          placeholder="Start Date"></p-calendar>
+      </div>
+      <div class="ui-g-12 ui-md-3">
+        <p-calendar name="end" [(ngModel)]="endDate" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true"
+          placeholder="End Date"></p-calendar>
+      </div>
+      <!-- <div class="ui-g-12 ui-md-3">
+          <button pButton class="ui-button-success" label="Download"></button>
+        </div> -->
+    </div>
+  </form>
+  <div>
+    <p-dataTable #dt [lazy]="true" [value]="customers" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[3,5,10]"
+      [totalRecords]="totalRecords" (onLazyLoad)="loadCustomersLazy($event)" [responsive]="true" selectionMode="single" [(selection)]="selectedCustomer"
+      (onRowSelect)="onRowSelect($event)">
+      <p-header>
+        List of Customers
+        <div class="ui-helper-clearfix">
+          <button type="button" pButton icon="fa-file-o" iconPos="left" label="Download" (click)="dt.exportCSV()" style="float:right"></button>
+        </div>
+      </p-header>
+      <p-column header="Seq">
+        <ng-template let-ri="rowIndex" pTemplate="Body">
+          <span [style]="{'text-align': 'right'}"> {{ri + 1}}</span>
+        </ng-template>
+      </p-column>
+      <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+      <p-column header="Operations">
+        <ng-template let-customer="rowData" pTemplate="body">
+          <button type="button" class="ui-button-info" pButton (click)="edit(customer)" icon="fa-pencil"></button>
+          <button type="button" class="ui-button-danger" pButton (click)="a" icon="fa-trash"></button>
+        </ng-template>
+      </p-column>
+    </p-dataTable>
+    <p-dialog header="Customer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+      <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="customer">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerNo">Customer No</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerNo" [(ngModel)]="customer.customerNo" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerType">Customer Type</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerType" [(ngModel)]="customer.customerType" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerName">Customer Name</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerName" [(ngModel)]="customer.customerName" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerState">Customer State</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerState" [(ngModel)]="customer.customerState" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerCreditLimit">Customer Credit Limit</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerCreditLimit" [(ngModel)]="customer.customerCreditLimit" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerManager">Customer Manager</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerManager" [(ngModel)]="customer.customerManager" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerCreationDate">Customer Creation Date</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerCreationDate" [(ngModel)]="customer.customerCreationDate" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><label for="customerLastUpdateDate">Customer Last Update Date</label></div>
+          <div class="ui-grid-col-12"><input pInputText id="customerLastUpdateDate" [(ngModel)]="customer.customerLastUpdateDate" /></div>
+        </div>
+      </div>
+      <p-footer>
+        <button pButton class="ui-button-primary" label="More..." click="#"></button>
+      </p-footer>
+    </p-dialog>
+  </div>
 </div>
