@@ -1,11 +1,25 @@
+<div>
+  <p-breadcrumb [model]="items"></p-breadcrumb>
+</div>
 <div class="content-section introduction">
   <div>
     <span class="function-title">New Corporation Customer Information</span>
   </div>
 </div>
 <form>
+  <div class="content-buttons">
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-8">
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <button pButton type="button" class="ui-button-info" icon="fa-save" label="Save"></button>
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <button pButton type="button" class="ui-button-success" icon="fa-check" label="Submit"></button>
+      </div>
+    </div>
+  </div>
   <div class="content-section">
-    <p-breadcrumb [model]="items"></p-breadcrumb>
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-4">
         <span>Customer Number</span>
@@ -136,7 +150,7 @@
     </div>
   </div>
   <div class="content-section">
-    <h2>Desinated Account Information</h2>
+    <h2>Designated Account Information</h2>
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-4">
         <span>Account Name</span>
@@ -158,6 +172,78 @@
           <span class="ui-inputgroup-addon"><i class="fa fa-credit-card"></i></span>
           <input type="text" pInputText placeholder="Account Number">
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-section">
+    <h2>Invoice Information</h2>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Corporation Name</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+          <input type="text" pInputText placeholder="Corporation Name">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Contact Number</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-phone"></i></span>
+          <input type="text" pInputText placeholder="Contact Number">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Tax Identification Number</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+          <input type="text" pInputText placeholder="Tax Identification Number">
+        </div>
+      </div>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <span>Address</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+          <input type="text" pInputText placeholder="Address">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Bank</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-bank"></i></span>
+          <input type="text" pInputText placeholder="Bank">
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-4">
+        <span>Bank Account Number</span>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-id-card"></i></span>
+          <input type="text" pInputText placeholder="Bank Account Number">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="content-section">
+    <h2>Other Information</h2>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-12">
+        <div>
+          <textarea [rows]="5" pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-buttons">
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-8">
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <button pButton type="button" class="ui-button-info" icon="fa-save" label="Save"></button>
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <button pButton type="button" class="ui-button-success" icon="fa-check" label="Submit"></button>
       </div>
     </div>
   </div>

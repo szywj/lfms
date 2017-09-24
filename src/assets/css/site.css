@@ -369,6 +369,12 @@ body {
     margin-top: 0;
 }
 
+
+.content-buttons {
+    background-color: #f5f7f8;
+    border-bottom: solid 1px #dde3e6;
+}
+
 .function-title {
     font-size: 30px;
     /* margin-bottom: 20px; */

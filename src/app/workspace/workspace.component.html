@@ -3,7 +3,7 @@
         <a href="#" class="logo" [routerLink]="['/']">
             <!-- <img alt="logo" src="assets/showcase/images/logo.png" /> -->
             <span>Lease and Factoring Management System</span>
-        </a> 
+        </a>
         <a href="javascript:void(0);" class="menu-button" (click)="onTogglerClick($event)">
             <i class="fa fa-bars"></i>
         </a>
@@ -17,6 +17,22 @@
             <div [ngClass]="{'submenushow': (customermenutitle.id == activeMenuId), 'submenuhide': (customermenutitle.id != activeMenuId)}">
                 <a [routerLink]="['customer']" (click)="menuActive = false">Browse</a>
                 <a [routerLink]="['customer/newcustomer']" (click)="menuActive = false">New</a>
+            </div>
+            <a id="menu_individual" #individualmenutitle [class.active-menuitem]="individualmenutitle.id == activeMenuId" (click)="activeMenuId = (activeMenuId === individualmenutitle.id ? null :individualmenutitle.id)">
+                <i class="fa fa-user"></i>
+                <span>Individual</span>
+            </a>
+            <div [ngClass]="{'submenushow': (individualmenutitle.id == activeMenuId), 'submenuhide': (individualmenutitle.id != activeMenuId)}">
+                <a (click)="menuActive = false">Browse</a>
+                <a (click)="menuActive = false">New</a>
+            </div>
+            <a id="menu_credit" #creditmenutitle [class.active-menuitem]="creditmenutitle.id == activeMenuId" (click)="activeMenuId = (activeMenuId === creditmenutitle.id ? null :creditmenutitle.id)">
+                <i class="fa fa-money"></i>
+                <span>Credit Granting</span>
+            </a>
+            <div [ngClass]="{'submenushow': (creditmenutitle.id == activeMenuId), 'submenuhide': (creditmenutitle.id != activeMenuId)}">
+                <a (click)="menuActive = false">Browse</a>
+                <a (click)="menuActive = false">New</a>
             </div>
         </div>
     </div>
